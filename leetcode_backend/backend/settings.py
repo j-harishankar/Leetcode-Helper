@@ -24,10 +24,10 @@ SECRET_KEY = 'django-insecure-3i1tui3mzz&3ovzlutdog7y!j=8o9(vuah3yg*k!a57r%u(6%w
 GEMINI_API_KEY = "AIzaSyDU88ywematkfLK7q9j5GXIRlZhewSDH3E"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # settings.py
-ALLOWED_HOSTS = ['leetcode-helper-wn4c.onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['.render.com', 'localhost', '127.0.0.1']
 
 # Application definition
 
