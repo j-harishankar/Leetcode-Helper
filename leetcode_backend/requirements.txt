@@ -31,3 +31,4 @@ typing-inspection==0.4.1
 typing_extensions==4.14.0
 uritemplate==4.2.0
 urllib3==2.5.0
+vercel==0.2.1
