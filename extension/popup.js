@@ -1,4 +1,5 @@
 console.log("📦 popup.js loaded");
+
 document.getElementById("getHelp").addEventListener("click", async () => {
   chrome.tabs.query({ active: true, currentWindow: true }, async (tabs) => {
     const tab = tabs[0];
@@ -8,20 +9,28 @@ document.getElementById("getHelp").addEventListener("click", async () => {
     console.log("LeetCode URL:", url);
     console.log("Problem Title:", title);
 
-    // For tomorrow: send to Django here
-    fetch("http://127.0.0.1:8000/api/solve/", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      title: title,
-      url: url
-    })
-  })
-  .then(response => response.json())
-  .then(data => console.log("✅ Response from Django:", data))
-  .catch(error => console.error("❌ Error:", error));
+    const response = await fetch("http://127.0.0.1:8000/api/solve/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ title, url })
+    });
 
+    const data = await response.json();
+    console.log("✅ Response from Django:", data);
+
+    const output = document.getElementById("output");
+    output.innerHTML = "";
+
+    if (data.steps && Array.isArray(data.steps)) {
+      data.steps.forEach((step, index) => {
+        const li = document.createElement("li");
+        li.textContent = step;
+        output.appendChild(li);
+      });
+    } else {
+      output.innerHTML = "<p>No steps found.</p>";
+    }
   });
 });
