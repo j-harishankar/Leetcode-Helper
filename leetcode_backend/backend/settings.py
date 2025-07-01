@@ -27,7 +27,7 @@ GEMINI_API_KEY = "AIzaSyCEtv_0PJw6NRF-LaMbrWlihi2fxKjUkOs"
 DEBUG = True
 
 # settings.py
-ALLOWED_HOSTS = ['.render.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['.onrender.com', 'localhost', '127.0.0.1']
 
 # Application definition
 
