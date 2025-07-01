@@ -17,7 +17,7 @@ document.getElementById("getHelp").addEventListener("click", async () => {
       console.log("LeetCode URL:", url);
       console.log("Problem Title:", title);
 
-      const response = await fetch("http://127.0.0.1:8000/api/solve/", {
+      const response = await fetch("https://leetcode-helper-wn4c.onrender.com/api/solve/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
