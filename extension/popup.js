@@ -15,8 +15,8 @@ document.getElementById("getHelp").addEventListener("click", async () => {
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
-      title: "Two Sum - LeetCode",
-      url: "https://leetcode.com/problems/two-sum"
+      title: title,
+      url: url
     })
   })
   .then(response => response.json())
