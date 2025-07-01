@@ -1,43 +1,91 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head>  
   <title>LeetCode Helper</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      padding: 10px;
-      width: 300px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 20px;
+      width: 320px;
+      height: auto;
+      margin: 0;
+      background: linear-gradient(135deg, #2c5364, #203a43, #0f2027);
+      color: #ffffff;
+      backdrop-filter: blur(10px);
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.18);
     }
 
     h3 {
       margin-top: 0;
+      text-align: center;
+      font-weight: 600;
+      font-size: 20px;
+      color: #ffffff;
     }
 
     #getHelp {
-      padding: 10px;
-      background: #4CAF50;
+      padding: 12px;
+      background: rgba(72, 239, 145, 0.25);
+      border: 1px solid rgba(72, 239, 145, 0.5);
       color: white;
-      border: none;
+      font-weight: bold;
       width: 100%;
-      border-radius: 5px;
+      border-radius: 10px;
       cursor: pointer;
-      margin-bottom: 10px;
+      transition: all 0.3s ease;
+      margin-top: 15px;
+    }
+
+    #getHelp:hover {
+      background: rgba(72, 239, 145, 0.4);
+      transform: scale(1.03);
     }
 
     ul {
       padding-left: 20px;
+      margin-top: 15px;
+      max-height: 200px;
+      overflow-y: auto;
     }
 
     li {
-      margin-bottom: 5px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 8px 10px;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      font-size: 14px;
+      line-height: 1.4;
     }
+
+    /* Custom Scrollbar for better UX */
+    ul::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ul::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+    }
+
   </style>
 </head>
 <body>
-  <h3>Need Help with LeetCode?</h3>
-  <button id="getHelp">Get Step-by-Step Help</button>
-
-  <ul id="output"></ul> <!-- This is where the guided steps will appear -->
+  <div class="glass-card">
+    <h3>Need Help with LeetCode?</h3>
+    <button id="getHelp">Get Step-by-Step Help</button>
+    <ul id="output"></ul>
+  </div>
 
   <script src="popup.js"></script>
 </body>
