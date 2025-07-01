@@ -24,13 +24,14 @@ document.getElementById("getHelp").addEventListener("click", async () => {
     output.innerHTML = "";
 
     if (data.steps && Array.isArray(data.steps)) {
-      data.steps.forEach((step, index) => {
-        const li = document.createElement("li");
-        li.textContent = step;
-        output.appendChild(li);
+      data.steps.forEach((step) => {
+        const div = document.createElement("div");
+        div.innerHTML = marked.parse(step); // Using Marked package
+        output.appendChild(div);
       });
     } else {
       output.innerHTML = "<p>No steps found.</p>";
     }
+
   });
 });

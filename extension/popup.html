@@ -1,44 +1,19 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>LeetCode Helper</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 10px;
-      width: 300px;
-    }
-
-    h3 {
-      margin-top: 0;
-    }
-
-    #getHelp {
-      padding: 10px;
-      background: #4CAF50;
-      color: white;
-      border: none;
-      width: 100%;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-bottom: 10px;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    li {
-      margin-bottom: 5px;
-    }
-  </style>
+  <link rel="stylesheet" href="popup.css">
+  <script src="marked.min.js"></script><!--Markdown display package-->
 </head>
+
 <body>
   <h3>Need Help with LeetCode?</h3>
   <button id="getHelp">Get Step-by-Step Help</button>
 
-  <ul id="output"></ul> <!-- This is where the guided steps will appear -->
+  <div id="output"></div><!-- This is where the guided steps will appear -->
 
   <script src="popup.js"></script>
 </body>
+
 </html>

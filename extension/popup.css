@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 10px;
+    width: 300px;
+}
+
+h3 {
+    margin-top: 0;
+}
+
+#getHelp {
+    padding: 10px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+#output {
+    white-space: pre-wrap;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 5px;
+}
