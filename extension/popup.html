@@ -1,92 +1,181 @@
 <!DOCTYPE html>
 <html>
-<head>  
-  <title>LeetCode Helper</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      padding: 20px;
-      width: 320px;
-      height: auto;
-      margin: 0;
-      background: linear-gradient(135deg, #2c5364, #203a43, #0f2027);
-      color: #ffffff;
-      backdrop-filter: blur(10px);
-    }
-
-    .glass-card {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 15px;
-      padding: 20px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-    }
-
-    h3 {
-      margin-top: 0;
-      text-align: center;
-      font-weight: 600;
-      font-size: 20px;
-      color: #ffffff;
-    }
-
-    #getHelp {
-      padding: 12px;
-      background: rgba(72, 239, 145, 0.25);
-      border: 1px solid rgba(72, 239, 145, 0.5);
-      color: white;
-      font-weight: bold;
-      width: 100%;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      margin-top: 15px;
-    }
-
-    #getHelp:hover {
-      background: rgba(72, 239, 145, 0.4);
-      transform: scale(1.03);
-    }
-
-    ul {
-      padding-left: 20px;
-      margin-top: 15px;
-      max-height: 200px;
-      overflow-y: auto;
-    }
-
-    li {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 8px 10px;
-      border-radius: 8px;
-      margin-bottom: 8px;
-      font-size: 14px;
-      line-height: 1.4;
-    }
-
-    /* Custom Scrollbar for better UX */
-    ul::-webkit-scrollbar {
-      width: 6px;
-    }
-
-    ul::-webkit-scrollbar-thumb {
-      background: rgba(255, 255, 255, 0.2);
-      border-radius: 10px;
-    }
-
-  </style>
+<head>
+    <title>LeetCode Helper</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px;
+            width: 400px;
+            height: auto;
+            margin: 0;
+            background: #000000;
+            color: #ffffff;
+        }
+        
+        .container {
+            background: #1a1a1a;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            border: 1px solid #333333;
+        }
+        
+        h3 {
+            margin-top: 0;
+            text-align: center;
+            font-weight: 600;
+            font-size: 20px;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+        
+        #getHelp {
+            padding: 12px 20px;
+            background: #ffffff;
+            border: none;
+            color: #000000;
+            font-weight: bold;
+            width: 100%;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 14px;
+        }
+        
+        #getHelp:hover {
+            background: #e0e0e0;
+            transform: translateY(-1px);
+        }
+        
+        #getHelp:active {
+            transform: translateY(0);
+        }
+        
+        #getHelp:disabled {
+            background: #666666;
+            color: #999999;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        #output {
+            margin-top: 20px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .step {
+            background: #2a2a2a;
+            border: 1px solid #404040;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+        
+        .step h4 {
+            color: #ffffff;
+            margin: 0 0 10px 0;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        
+        .step p {
+            color: #cccccc;
+            margin: 8px 0;
+            font-size: 14px;
+        }
+        
+        .step ul {
+            color: #cccccc;
+            margin: 8px 0;
+            padding-left: 20px;
+        }
+        
+        .step li {
+            margin: 4px 0;
+            font-size: 14px;
+        }
+        
+        .step code {
+            background: #000000;
+            color: #00ff00;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+        }
+        
+        .step strong {
+            color: #ffffff;
+            font-weight: 600;
+        }
+        
+        .loading {
+            text-align: center;
+            color: #999999;
+            padding: 20px;
+            font-style: italic;
+        }
+        
+        .error {
+            background: #2a1a1a;
+            border: 1px solid #ff4444;
+            color: #ff6666;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+            text-align: center;
+        }
+        
+        .no-steps {
+            background: #2a2a1a;
+            border: 1px solid #ffaa44;
+            color: #ffcc66;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+            text-align: center;
+        }
+        
+        /* Custom Scrollbar */
+        #output::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        #output::-webkit-scrollbar-track {
+            background: #1a1a1a;
+            border-radius: 4px;
+        }
+        
+        #output::-webkit-scrollbar-thumb {
+            background: #404040;
+            border-radius: 4px;
+        }
+        
+        #output::-webkit-scrollbar-thumb:hover {
+            background: #555555;
+        }
+    </style>
 </head>
 <body>
-  <div class="glass-card">
-    <h3>Need Help with LeetCode?</h3>
-    <button id="getHelp">Get Step-by-Step Help</button>
-    <ul id="output"></ul>
-  </div>
+    <div class="container">
+        <h3>Need Help with LeetCode?</h3>
+        <button id="getHelp">Get Step-by-Step Help</button>
+        <div id="output"></div>
+    </div>
+    
+    <script src="popup.js"></script>
+       
+</body>
+</html>
 
-  <script src="popup.js"></script>
+
+
 </body>
 </html>
