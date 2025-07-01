@@ -36,6 +36,20 @@ document.getElementById("getHelp").addEventListener("click", async () => {
           const div = document.createElement("div");
           div.innerHTML = marked.parse(step); // Render markdown
           output.appendChild(div);
+
+          document.getElementById("copyContainer").style.display = "block";
+
+          // Copy text logic
+          document.getElementById("copyBtn").onclick = () => {
+            const textToCopy = data.steps.join('\n\n');
+            navigator.clipboard.writeText(textToCopy).then(() => {
+              document.getElementById("copyBtn").innerText = "✅";
+              setTimeout(() => {
+                document.getElementById("copyBtn").innerText = "Copy";
+              }, 1500);
+            })
+          };
+
         });
       } else {
         output.innerHTML = "<p>No steps found.</p>";
