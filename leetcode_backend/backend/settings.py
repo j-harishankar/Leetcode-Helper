@@ -26,8 +26,8 @@ GEMINI_API_KEY = "AIzaSyDU88ywematkfLK7q9j5GXIRlZhewSDH3E"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+# settings.py
+ALLOWED_HOSTS = ['leetcode-helper-wn4c.onrender.com', 'localhost', '127.0.0.1']
 
 # Application definition
 
