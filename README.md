@@ -72,16 +72,6 @@ LeetCode Helper streamlines your LeetCode workflow. With a single click, you get
 > The backend is fully managed—no user setup required. All requests are handled securely and efficiently in the cloud.
 
 ---
-
-## 📸 Screenshots
-
-> _Insert your screenshots below by replacing the placeholders:_
-
-![Popup Screenshot 1](screenshots/screenshot1.png)
-![Guidance Example](screenshots/screenshot2.png)
-
----
-
 ## 📂 Folder Structure
 
 ```
